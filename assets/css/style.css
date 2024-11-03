@@ -1888,13 +1888,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     text-decoration: none; /* Removes underline */
   }
   
-  .download-icon-link:visited,
-  .download-icon-link:hover,
-  .download-icon-link:active,
-  .download-icon-link:focus {
-    color: #fbfbfb; /* Ensures the color does not change on these states */
-    text-decoration: none; /* Keeps the underline removed */
-  }
+  .download-icon-link:hover { color: var(--light-gray); }
   
   .download-icon {
     font-size: 1.2rem; /* Increase the size of the icon slightly */
