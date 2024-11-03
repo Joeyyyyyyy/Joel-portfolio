@@ -1879,4 +1879,17 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+
+  .download-icon-link {
+    margin-left: 4px; /* Reduce the margin to bring it closer */
+    display: inline-flex;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .download-icon {
+    font-size: 1.2rem; /* Increase the size of the icon slightly */
+    vertical-align: middle;
+  }
+
 }
