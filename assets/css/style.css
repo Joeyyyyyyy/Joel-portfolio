@@ -1893,7 +1893,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     text-decoration: none; /* Removes underline */
   }
   
-  .download-icon-link:hover { color: var(--light-gray); }
+  .download-icon-link:hover .download-icon { color: var(--light-gray); }
   
   .download-icon {
     font-size: 1.2rem; /* Increase the size of the icon slightly */
