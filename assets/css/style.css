@@ -1884,7 +1884,12 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-left: 4px; /* Reduce the margin to bring it closer */
     display: inline-flex;
     text-decoration: none;
-    color: #fbfbfb; /* Keeps the color consistent with the parent element */
+    color: #fbfbfb;
+    text-decoration: none; /* Removes underline */
+  }
+
+  .download-icon {
+    color: #fbfbfb;
     text-decoration: none; /* Removes underline */
   }
   
