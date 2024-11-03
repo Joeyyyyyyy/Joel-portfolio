@@ -1880,7 +1880,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 
-  .download-icon-link {
+  .download-icon-link .download-icon-link:visited {
     margin-left: 4px; /* Reduce the margin to bring it closer */
     display: inline-flex;
     text-decoration: none;
@@ -1894,11 +1894,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
   
   .download-icon-link:hover .download-icon { color: var(--light-gray); }
-  
+
   .download-icon {
     font-size: 1.2rem; /* Increase the size of the icon slightly */
     vertical-align: middle;
   }
-    
+  
+  /* Mobile-specific styling */
+  @media (max-width: 768px) {
+  .download-icon-link, .download-icon-link:visited {
+    color: #fbfbfb; /* Adjust the color for mobile */
+    }
+  }
 
 }
