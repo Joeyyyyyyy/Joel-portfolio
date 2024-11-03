@@ -1885,11 +1885,22 @@ textarea.form-input::-webkit-resizer { display: none; }
     display: inline-flex;
     text-decoration: none;
     color: inherit;
+    color: inherit; /* Keeps the color consistent with the parent element */
+    text-decoration: none; /* Removes underline */
+  }
+  
+  .download-icon-link:visited,
+  .download-icon-link:hover,
+  .download-icon-link:active,
+  .download-icon-link:focus {
+    color: inherit; /* Ensures the color does not change on these states */
+    text-decoration: none; /* Keeps the underline removed */
   }
   
   .download-icon {
     font-size: 1.2rem; /* Increase the size of the icon slightly */
     vertical-align: middle;
   }
+    
 
 }
