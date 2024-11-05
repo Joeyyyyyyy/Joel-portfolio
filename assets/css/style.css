@@ -1010,7 +1010,8 @@ main {
 .project-item > a:hover img { transform: scale(1.1); }
 
 .project-title,
-.project-category { margin-left: 10px; }
+.project-category,
+.project-description { margin-left: 10px; }
 
 .project-title {
   color: var(--white-2);
@@ -1026,7 +1027,11 @@ main {
   font-weight: var(--fw-300);
 }
 
-
+.project-description {
+  color: var(--white-1);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+}
 
 
 
@@ -1249,6 +1254,36 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .project-img,
   .blog-banner-box { height: auto; }
+
+
+  /**
+   * #RESUME
+   */
+
+  .download-icon-link  {
+    margin-left: 4px; /* Reduce the margin to bring it closer */
+    display: inline-flex;
+    text-decoration: none;
+    color: #fbfbfb;
+    text-decoration: none; /* Removes underline */
+  }
+
+  .download-icon {
+    color: #fbfbfb;
+    text-decoration: none; /* Removes underline */
+  }
+  
+  .download-icon-link:hover .download-icon { color: var(--light-gray); }
+
+  .download-icon {
+    font-size: 1.4rem; /* Increase the size of the icon slightly */
+    vertical-align: middle;
+  }
+
+  .download-icon-link, .download-icon-link:visited, .download-icon {
+    color: #fbfbfb; /* Adjust the color for mobile */
+    }
+    
 
 }
 
@@ -1880,31 +1915,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 
-  .download-icon-link  {
-    margin-left: 4px; /* Reduce the margin to bring it closer */
-    display: inline-flex;
-    text-decoration: none;
-    color: #fbfbfb;
-    text-decoration: none; /* Removes underline */
-  }
-
-  .download-icon {
-    color: #fbfbfb;
-    text-decoration: none; /* Removes underline */
-  }
   
-  .download-icon-link:hover .download-icon { color: var(--light-gray); }
-
-  .download-icon {
-    font-size: 1.2rem; /* Increase the size of the icon slightly */
-    vertical-align: middle;
-  }
-  
-  /* Mobile-specific styling */
-  @media (max-width: 768px) {
-  .download-icon-link, .download-icon-link:visited {
-    color: #fbfbfb; /* Adjust the color for mobile */
-    }
-  }
 
 }
