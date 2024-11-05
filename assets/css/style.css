@@ -829,6 +829,31 @@ main {
   line-height: 1.6;
 }
 
+.download-icon-link  {
+  margin-left: 4px; /* Reduce the margin to bring it closer */
+  display: inline-flex;
+  text-decoration: none;
+  color: #fbfbfb;
+  text-decoration: none; /* Removes underline */
+}
+
+.download-icon {
+  color: #fbfbfb;
+  text-decoration: none; /* Removes underline */
+}
+
+.download-icon-link:hover .download-icon { color: var(--light-gray); }
+
+.download-icon {
+  font-size: 1.4rem; /* Increase the size of the icon slightly */
+  vertical-align: middle;
+}
+
+.download-icon-link, .download-icon-link:visited, .download-icon {
+  color: #fbfbfb; 
+  }
+  
+
 
 /**
  * skills 
@@ -1256,34 +1281,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .blog-banner-box { height: auto; }
 
 
-  /**
-   * #RESUME
-   */
-
-  .download-icon-link  {
-    margin-left: 4px; /* Reduce the margin to bring it closer */
-    display: inline-flex;
-    text-decoration: none;
-    color: #fbfbfb;
-    text-decoration: none; /* Removes underline */
-  }
-
-  .download-icon {
-    color: #fbfbfb;
-    text-decoration: none; /* Removes underline */
-  }
-  
-  .download-icon-link:hover .download-icon { color: var(--light-gray); }
-
-  .download-icon {
-    font-size: 1.4rem; /* Increase the size of the icon slightly */
-    vertical-align: middle;
-  }
-
-  .download-icon-link, .download-icon-link:visited, .download-icon {
-    color: #fbfbfb; /* Adjust the color for mobile */
-    }
-    
 
 }
 
