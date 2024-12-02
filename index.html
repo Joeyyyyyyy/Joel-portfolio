@@ -1063,22 +1063,28 @@
       const message = document.getElementById('message').value;
   
       // Build the URL with query parameters
-      var scriptUrl = "https://script.google.com/macros/s/AKfycbxi793_xd15uoawe7uWAR1iHU7rG_BQ-jZPbwDWVuNXge71YNJ8J78D82BGzC2EDcAv/exec";
-      var url = `${scriptUrl}?subject=${encodeURIComponent("Recruiter Inquiry Regarding Your Profile from "+fullname)}&body=${encodeURIComponent("Email: "+email+"\n\nMessage: "+message)}`;
+      var scriptUrl = "https://script.google.com/macros/s/AKfycbwxrmUJYgchlD-XoCAoJP6FngNJml5h9gy9ccYACOCnC9D_9cs87ItD4S9yBLiRIzRs/exec";
+      var url = `${scriptUrl}?subject=${encodeURIComponent("Recruiter Inquiry from "+fullname)}&body=${encodeURIComponent("Email: "+email+"\n\nMessage: "+message)}`;
 
       // Use fetch to send the GET request
       fetch(url)
         .then(response => response.text())
         .then(data => {
-          // Show the response message
-          alertText.style.color = "#64ff64";
-          alertText.innerText = "Message sent successfully!";
+          // Check if the response is success or failure
+          if (data.includes('Email sent successfully')) {
+            // Show success message
+            alertText.style.color = "#64ff64";
+            alertText.innerText = "Message sent successfully!";
+          } else {
+            // Show failure message with the error details
+            alertText.style.color = "red";
+            alertText.innerText = "Message not sent :(";
+          }
         })
         .catch(error => {
-          // Show error message if there's a problem with sending the email
+          // Show error message if there's a problem with the fetch request
           alertText.style.color = "red";
-          alertText.innerText = "Message not sent :(";
-          document.getElementById("alert").innerText = "There was an error sending the email.";
+          alertText.innerText = "Error connecting to the server :(";
         });
     }
   </script>  
