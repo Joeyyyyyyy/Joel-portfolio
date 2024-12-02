@@ -1020,7 +1020,7 @@
             </div>
         
             <textarea id="message" name="message" class="form-input" placeholder="Your Message" required></textarea>
-        
+            <p id="alert" style="color:hsl(35, 100%, 68%);display: none;">Email not sent</p>
             <button class="form-btn" type="submit">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
@@ -1052,17 +1052,33 @@
 
   <script>
     function sendMail(event) {
+      const alertText= document.getElementById("alert");
+      alertText.style.display="inline";
+      alertText.innerText = "Sending message...";
       event.preventDefault(); // Prevents the form from submitting the traditional way
   
       const fullname = document.getElementById('fullname').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
   
-      // Construct the mailto link
-      const mailtoLink = `mailto:jjjj8912@gmail.com?subject=Recruiter Inquiry Regarding Your Profile from ${encodeURIComponent(fullname)}&body=Name: ${encodeURIComponent(fullname)}%0DEmail: ${encodeURIComponent(email)}%0D%0DMessage:%0D${encodeURIComponent(message)}`;
-  
-      // Open the link in a new tab
-      window.open(mailtoLink, '_blank');
+      // Build the URL with query parameters
+      var scriptUrl = "https://script.google.com/macros/s/AKfycbxi793_xd15uoawe7uWAR1iHU7rG_BQ-jZPbwDWVuNXge71YNJ8J78D82BGzC2EDcAv/exec";
+      var url = `${scriptUrl}?subject=${encodeURIComponent("Recruiter Inquiry Regarding Your Profile from "+fullname)}&body=${encodeURIComponent("Email: "+email+"\n\nMessage: "+message)}`;
+
+      // Use fetch to send the GET request
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          // Show the response message
+          alertText.style.color = "#64ff64";
+          alertText.innerText = "Message successfully!";
+        })
+        .catch(error => {
+          // Show error message if there's a problem with sending the email
+          alertText.style.color = "red";
+          alertText.innerText = "Message not sent :(";
+          document.getElementById("alert").innerText = "There was an error sending the email.";
+        });
     }
   </script>  
 </body>
