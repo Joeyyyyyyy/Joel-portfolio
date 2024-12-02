@@ -74,7 +74,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:jjjj8912@gmail.com" class="contact-link" target="_blank">jjjj8912@gmail.com</a>
+              <a href="mailto:joelofficial2002@gmail.com" class="contact-link" target="_blank">joelofficial2002@gmail.com</a>
             </div>
 
           </li>
@@ -1020,7 +1020,7 @@
             </div>
         
             <textarea id="message" name="message" class="form-input" placeholder="Your Message" required></textarea>
-            <p id="alert" style="color:hsl(35, 100%, 68%);display: none;">Email not sent</p>
+            <p id="alert" style="display: none;">Email not sent</p>
             <button class="form-btn" type="submit">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
@@ -1055,6 +1055,7 @@
       const alertText= document.getElementById("alert");
       alertText.style.display="inline";
       alertText.innerText = "Sending message...";
+      alertText.style.color="hsl(35, 100%, 68%)";
       event.preventDefault(); // Prevents the form from submitting the traditional way
   
       const fullname = document.getElementById('fullname').value;
@@ -1071,7 +1072,7 @@
         .then(data => {
           // Show the response message
           alertText.style.color = "#64ff64";
-          alertText.innerText = "Message successfully!";
+          alertText.innerText = "Message sent successfully!";
         })
         .catch(error => {
           // Show error message if there's a problem with sending the email
