@@ -1061,10 +1061,11 @@
       const fullname = document.getElementById('fullname').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
+      const referrer = window.location.href;
   
       // Build the URL with query parameters
       var scriptUrl = "https://script.google.com/macros/s/AKfycbzOZsLpE4BrkOhb93VyP8Qze2PEOD6rIphHHCgjLKRTOESAwCcdYKqCRuJzzAh-04Sf/exec";
-      var url = `${scriptUrl}?subject=${encodeURIComponent("Recruiter Inquiry from "+fullname)}&body=${encodeURIComponent("Email: "+email+"\n\nMessage: "+message)}`;
+      var url = `${scriptUrl}?subject=${encodeURIComponent("Recruiter Inquiry from "+fullname)}&body=${encodeURIComponent("Email: "+email+"\n\nMessage: "+message)}&referrer=${encodeURIComponent(referrer)}`;
 
       // Use fetch to send the GET request
       fetch(url)
